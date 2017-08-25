@@ -22,12 +22,15 @@
     }];
 }
 ## 在viewDidDisappear里面销毁定时器
+
 - (void)viewWillDisappear:(BOOL)animated {
+
     [super viewWillDisappear:animated];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
     [self.dispatchTimer cancelTimer];
+    
 }
 ## 如果遇到网络变化，如断网情况应该调用
 [self.dispatchTimer resumeTimer];
